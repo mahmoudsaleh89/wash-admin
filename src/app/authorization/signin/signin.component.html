@@ -1,0 +1,261 @@
+<ng-container *ngIf="selectedLanguage.lang == 'en'">
+    <div class="container-fluid ">
+        <div class="row no-gutter bg-image d-flex align-items-center">
+            <div class="col-md-12 col-lg-4 login-card">
+                <div class="login d-flex  align-items-center">
+                    <div class=" w-100">
+                        <div class="row"
+                             [@slideInLeft]="{ value: glassyBoxAnimateState, params: {duration: 2000, delay: 300} }"
+                             (@slideInLeft.done)="onAnimationDone()">
+                            <div class="col-md-12">
+                                <div class="text-center">
+                                    <img height="80px" width="80px" src="assets/images/logo.svg"
+                                         alt="pay-pro-logo">
+                                    <h4 *ngIf="!showRecoverEmail"  class="welcome-back text-secondary mt-5 mb-5"> Welcome To Wash HCF</h4>
+                                    <h4 *ngIf="showRecoverEmail" class="welcome-back text-secondary mt-5 mb-5"> Recover Password</h4>
+                                    <div *ngIf="showRecoverEmail && successMessage" class="alert alert-success text-center my-4" role="alert">
+                                        Reset Password instructions sent to your email
+                                    </div>
+                                </div>
+                                <form *ngIf="!showRecoverEmail" #LoginForm="ngForm" (ngSubmit)="onSubmit(LoginForm)">
+                                    <div class="mb-3">
+                                        <label for="username"
+                                               class="text-muted">{{'AUTH.USERNAME' | translate}}</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               #username="ngModel"
+                                               id="username"
+                                               ngModel
+                                               required
+                                               name="username">
+                                        <app-validator [control]="username"></app-validator>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="float-end" (click)="showRecoverEmail = true">
+                                            <a  class="text-muted">
+                                                {{'Forgot password ?' | translate}}
+                                            </a>
+                                        </div>
+                                        <label for="password"
+                                               class="text-muted">{{'AUTH.PASSWORD'| translate }}</label>
+                                        <div class="input-group auth-pass-inputgroup">
+                                            <input [type]="isShowPassword ? 'text' : 'password'"
+                                                   class="form-control"
+                                                   name="password"
+                                                   id="password"
+                                                   ngModel
+                                                   #password="ngModel"
+                                                   required
+                                                   aria-label="Password"
+                                                   aria-describedby="password-addon">
+                                            <button class="btn btn-light text-primary" type="button"
+                                                    (click)="toggleFieldTextType()"
+                                                    id="password-addon"><i
+                                                    class="fas "
+                                                    [ngClass]="{'fa-eye': !isShowPassword, 'fa-eye-slash': isShowPassword}"
+                                            ></i></button>
+                                        </div>
+                                        <app-validator [control]="password"></app-validator>
+                                    </div>
+                                    <div class="mt-3 d-grid">
+                                        <button class="btn btn-primary btn-block"
+                                                type="submit">{{'SIGN IN' | translate}}</button>
+                                    </div>
+                                </form>
+                                <form *ngIf="showRecoverEmail" #resetPasswordForm="ngForm"
+                                      (ngSubmit)="onResetPassword(resetPasswordForm)">
+                                    <div class="mb-3">
+                                        <label for="username"
+                                               class="text-muted">{{'AUTH.EMAIL' | translate}}</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               #emailEL="ngModel"
+                                               id="email"
+                                               ngModel
+                                               required
+                                               email-validator
+                                               name="email">
+                                        <app-validator [control]="emailEL"></app-validator>
+                                    </div>
+                                    <div class="mt-3 d-grid">
+                                        <button class="btn btn-primary btn-block"
+                                                type="submit">{{'Send Email' | translate}}</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <ng-container *ngIf="!showRecoverEmail">
+                                <div class="col-12 mt-4">
+                                    <div class="dropdown d-block" ngbDropdown>
+                                        <button type="button"
+                                                class="btn w-100 header-item btn-block rounded herder-item-light"
+                                                data-bs-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false" ngbDropdownToggle>
+                                            <img class="" *ngIf="selectedLanguage" src="{{selectedLanguage.flag}}"
+                                                 alt="Header Language"
+                                                 height="16">
+                                            <span class="align-middle ms-2">{{selectedLanguage.text}}</span>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item"
+                                               *ngFor="let item of listLang"
+                                               (click)="setLanguage(item)"
+                                               [ngClass]="{'active': selectedLanguage === item}">
+                                                <img src="{{item.flag}}" alt="user-image" class="me-1" height="12"> <span
+                                                    class="align-middle">{{item.text}}</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                               <!-- <div  class="mt-5 text-center">
+                                    <p class="text-muted mb-0">{{'Dont have an account ?' | translate}}
+                                        <a routerLink="/authorization/register"
+                                           class="text-primary fw-semibold">
+                                            {{'Signup now' | translate}} </a>
+                                    </p>
+                                </div>-->
+                            </ng-container>
+
+                            <div *ngIf="showRecoverEmail" class="mt-5 text-center">
+                                <p class="text-muted mb-0">{{'Remember it  ?' | translate}}
+                                    <a (click)="showRecoverEmail = false" class="text-primary fw-semibold">
+                                        {{'Sign in' | translate}} </a>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="selectedLanguage.lang == 'ar'">
+    <div class="container-fluid ">
+        <div class="row no-gutter bg-image d-flex align-items-center">
+            <div class="col-md-12 col-lg-4 login-card">
+                <div class="login d-flex  align-items-center">
+
+                    <!-- Demo content-->
+                    <div class=" w-100">
+                        <div class="row"
+                             [@slideInLeft]="{ value: glassyBoxAnimateState, params: {duration: 2000, delay: 300} }"
+                             (@slideInLeft.done)="onAnimationDone()">
+                            <div class="col-md-12">
+                                <div class="text-center">
+                                    <img height="80px" width="80px" src="assets/images/logo.svg"
+                                         alt="pay-pro-logo">
+                                    <h4 *ngIf="!showRecoverEmail" class="welcome-back text-secondary mt-5 mb-5"> مرحبا في Wash HCF</h4>
+                                    <h4 *ngIf="showRecoverEmail" class="welcome-back text-secondary mt-5 mb-5"> اعادة ضبط كلمة المرور</h4>
+                                    <div *ngIf="showRecoverEmail && successMessage" class="alert alert-success text-center my-4" role="alert">
+                                       تم ارسال خطوات اعادة ضبط كلمة المرور الى بريدك الالكتروني
+                                    </div>
+                                </div>
+                                <form *ngIf="!showRecoverEmail" #LoginForm="ngForm" (ngSubmit)="onSubmit(LoginForm)">
+                                    <div class="mb-3">
+                                        <label for="username"
+                                               class="text-muted">{{'AUTH.USERNAME' | translate}}</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               #username="ngModel"
+                                               id="username"
+                                               ngModel
+                                               required
+                                               name="username">
+                                        <app-validator [control]="username"></app-validator>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="float-end">
+                                            <a (click)="showRecoverEmail = true" class="text-muted">
+                                                {{'AUTH.FORGOT_PASSWORD?' | translate}}
+                                            </a>
+                                        </div>
+                                        <label for="password"
+                                               class="text-muted">{{'AUTH.PASSWORD'| translate }}</label>
+                                        <div class="input-group auth-pass-inputgroup">
+                                            <input [type]="isShowPassword ? 'text' : 'password'"
+                                                   class="form-control"
+                                                   name="password"
+                                                   id="password"
+                                                   ngModel
+                                                   #password="ngModel"
+                                                   required
+                                                   aria-label="Password"
+                                                   aria-describedby="password-addon">
+                                            <button class="btn btn-light text-primary" type="button"
+                                                    (click)="toggleFieldTextType()"
+                                                    id="password-addon"><i
+                                                    class="fas "
+                                                    [ngClass]="{'fa-eye': !isShowPassword, 'fa-eye-slash': isShowPassword}"
+                                            ></i></button>
+                                        </div>
+                                        <app-validator [control]="password"></app-validator>
+                                    </div>
+                                    <div class="mt-3 d-grid">
+                                        <button class="btn btn-primary btn-block"
+                                                type="submit">{{'AUTH.SIGN_IN' | translate}}</button>
+                                    </div>
+                                </form>
+                                <form *ngIf="showRecoverEmail" #resetPasswordForm="ngForm"
+                                      (ngSubmit)="onResetPassword(resetPasswordForm)">
+                                    <div class="mb-3">
+                                        <label for="username"
+                                               class="text-muted">{{'AUTH.EMAIL' | translate}}</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               #emailEL="ngModel"
+                                               id="email"
+                                               ngModel
+                                               required
+                                               email-validator
+                                               name="email">
+                                        <app-validator [control]="emailEL"></app-validator>
+                                    </div>
+                                    <div class="mt-3 d-grid">
+                                        <button class="btn btn-primary btn-block"
+                                                type="submit">ارسل بريد الكتروني</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <ng-container *ngIf="!showRecoverEmail">
+                                <div class="col-12 mt-4">
+                                    <div class="dropdown d-block" ngbDropdown>
+                                        <button type="button"
+                                                class="btn w-100 header-item btn-block rounded herder-item-light"
+                                                data-bs-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false" ngbDropdownToggle>
+                                            <img class="" *ngIf="selectedLanguage" src="{{selectedLanguage.flag}}"
+                                                 alt="Header Language"
+                                                 height="16">
+                                            <span class="align-middle ms-2">{{selectedLanguage.text}}</span>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item"
+                                               *ngFor="let item of listLang"
+                                               (click)="setLanguage(item)"
+                                               [ngClass]="{'active': selectedLanguage === item}">
+                                                <img src="{{item.flag}}" alt="user-image" class="me-1" height="12"> <span
+                                                    class="align-middle">{{item.text}}</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <div *ngIf="showRecoverEmail" class="mt-5 text-center">
+                                <p class="text-muted mb-0">تذكرت كلمة المرور ؟
+                                    <a (click)="showRecoverEmail = false" class="text-primary fw-semibold">
+                                        سجل دخول </a>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div><!-- End -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+

@@ -1,0 +1,166 @@
+@use "sass:math";
+
+.login,
+.image {
+  min-height: 100vh;
+}
+
+/*img {
+  height: 80%;
+  width: 80%;
+}*/
+a{
+  cursor: pointer;
+}
+.bg-image {
+  background-image: url('../../../assets/images/auth-bg.svg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.glassy-box {
+
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 25px 0 0 25px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(14px);
+  border: 3px solid rgba(255, 255, 255, 0.63);
+  border-right: 0;
+  padding-top: 10vh;
+  padding-bottom: 7vh;
+  padding-left: 5%;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .fa-solid {
+    color: #686464;
+    font-size: 20px;
+    background-color: rgba(229, 232, 232, 0.75);
+    border-radius: 25px;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    margin-right: .6rem;
+  }
+
+  .fa-plus {
+    font-size: 23px;
+  }
+
+  p {
+   // overflow: hidden;
+    //width: 40px;
+    //white-space: nowrap;
+   // animation: typing 2s steps(50, end) forwards;
+   // animation-delay: 1s;
+    font-weight: 500;
+  }
+}
+
+
+.login-button {
+  background-color: #4e4c4c;
+  height: 50px;
+  width: 200px;
+  margin-top: 11vh;
+}
+
+.login-card {
+  .form-control{
+    background: var(--bs-light);
+    border: 1px solid  var(--bs-light);
+  }
+  padding: 0 5%;
+  background-color: white;
+  z-index: 100;
+}
+
+.container-fluid {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1000px) {
+  .glassy-box {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+}
+
+.welcome-back {
+  color: #cdcdcd;
+  font-weight: 10 !important;
+  font-size: 1.2rem;
+}
+
+.forget-password-label:hover {
+  text-decoration: underline;
+}
+
+
+input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.scrolling-words-container {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.scrolling-words-box {
+  height: 3rem;
+  margin: 0 5px;
+  overflow: hidden;
+  font-weight: 700;
+
+  span {
+    font-weight: 500;
+    font-size: 2.5rem;
+  }
+
+  ul {
+    margin: 0 0.625rem;
+    padding: 0;
+    animation: scrollUp 10s infinite;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      height: 3rem;
+    }
+  }
+}
+
+// Variables
+$item-count: 5;
+
+@keyframes scrollUp {
+  @for $i from 1 through ($item-count - 1) {
+    #{($i * 20) - 10%}, #{$i * 20%} {
+      transform: translateY(( math.div(-100% , $item-count)) * $i);
+    }
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 40px
+  }
+  to {
+    width: 100%
+  }
+}

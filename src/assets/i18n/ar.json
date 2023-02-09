@@ -1,0 +1,61 @@
+{
+  "Dashboard": "لوحة المراقبة",
+  "USERS": "المستخدمين",
+  "SURVEYS": "الدراسات الاستقصائية",
+  "ASSESSMENTS" : "التقييمات",
+  "DOMAINS": "المجالات",
+  "validators": {
+    "wrongEmailFormat": "البريد الإلكتروني غير صحيح",
+    "onlyArabicIsAllowed": "يجب أن يكون باللغة العربية",
+    "onlyEnglishIsAllowed": "يجب أن يكون باللغة الإنجليزية",
+    "uaeMobileNumbersOnlyAllowed": "يجب أن يكون الرقم إماراتي",
+    "passwordValidator": "على الأقل حرف كبير و حرف صغير و رقم و رمز",
+    "wrongIdFormat": "صيغة رقم الهوية خاطئة",
+    "minNumber": "يجب أن يكون أكثر من"
+  },
+  "AUTH": {
+    "PASSWORD": "كلمة المرور",
+    "SIGN_IN": "تسجيل دخول",
+    "USERNAME": "اسم المستخدم"
+  },
+  "MENU": {
+    "Dashboard": "لوحة المراقبة",
+    "USERS": "المستخدمين",
+    "SURVEYS": "الدراسات الاستقصائية",
+    "ASSESSMENTS" : "التقييمات",
+    "DOMAINS": "المجالات"
+  },
+  "GENERAL": {
+    "ACTIONS": "الاجراء",
+    "COPIED": "تم النسخ",
+    "SELECT": "اختر",
+    "ACTIVE": "فعال",
+    "SEARCH": "بحث",
+    "CLEAR": "أعادة تعين",
+    "EXPORT_TO_EXCEL": "تصدير لملف Excel",
+    "EXPORT_TO_PDF": "تصدير لملف PDF",
+    "ADD": "اضافة",
+    "DETAILS": "تفاصيل",
+    "SHOW": "عرض",
+    "OF": "من",
+    "There's no data on the table": "لا يوجد بيانات ",
+    "NO_DATA": "لا يوجد بيانات ",
+    "SUCCESS": "نجاح",
+    "FAILED": "فشل",
+    "NEXT": "التالي",
+    "BACK": "السابق",
+    "PREV": "السابق",
+    "YES": "نعم",
+    "NO": "لا",
+    "DISCARD": "الغاء",
+    "SAVE": "حفظ",
+    "EDIT": "تعديل",
+    "ERROR": "خطأ",
+    "CANCEL": "الغاء",
+    "TRANSFER": "تحويل"
+  },
+  "DASHBOARD_PAGE": {
+  },
+  "USERS_PAGE": {
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "Dashboard": "Dashboard",
+  "USERS": "Users",
+  "SURVEYS" : "Surveys",
+  "ASSESSMENTS" : "Assessments",
+  "DOMAINS": "Domains",
+  "validators": {
+    "wrongEmailFormat": "Wrong Email Format",
+    "onlyArabicIsAllowed": "Only arabic is Allowed",
+    "wrongIdFormat": "Wrong ID Number Format",
+    "OnlyEnglishIsAllowed": "Only English is Allowed",
+    "uaeMobileNumbersOnlyAllowed": "Only UAE number is allowed",
+    "passwordValidator": "At least 1 Upper case letter, Lower case letter, Number and Special Character",
+    "minNumber": "Value must be greater than or equal "
+  },
+  "AUTH": {
+    "PASSWORD": "Password",
+    "SIGN_IN": "Sign in",
+    "USERNAME": "User name",
+    "LOGIN": "Login"
+  },
+  "MENU": {
+    "Dashboard": "Dashboard",
+    "USERS": "Users",
+    "SURVEYS" : "Surveys",
+    "ASSESSMENTS" : "Assessments",
+    "DOMAINS": "Domains"
+  },
+  "GENERAL": {
+    "ACTIONS": "Action",
+    "COPIED": "Copied",
+    "SELECT": "Select",
+    "SEARCH": "Search",
+    "CLEAR": "Clear",
+    "ADD": "Add",
+    "DETAILS": "Details",
+    "There's no data on the table": "There's no data",
+    "NO_DATA": "There's no data",
+    "SHOW": "Show",
+    "OF": "Of",
+    "SUCCESS": "Success",
+    "FAILED": "Failed",
+    "AED": "AED",
+    "NEXT": "Next",
+    "BACK": "Back",
+    "PREV": "Prev",
+    "YES": "Yes",
+    "NO": "No",
+    "DISCARD": "Discard",
+    "SAVE": "Save",
+    "EDIT": "Edit",
+    "ERROR": "Error",
+    "ACTIVE": "Active",
+    "CANCEL": "Cancel",
+    "REJECT": "Reject"
+  },
+  "DASHBOARD_PAGE": {},
+  "USERS_PAGE": {}
+}
